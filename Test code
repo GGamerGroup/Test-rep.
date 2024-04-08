@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+// Функция для сложения двух чисел
+double add(double a, double b) {
+    return a + b;
+}
+
+// Функция для вычитания двух чисел
+double subtract(double a, double b) {
+    return a - b;
+}
+
+int main() {
+    setlocale(LC_ALL,"ru");
+    char operation;
+    double num1, num2, result;
+
+    std::cout << "Введите операцию (+ или -): ";
+    std::cin >> operation;
+
+    std::cout << "Введите первое число: ";
+    std::cin >> num1;
+
+    std::cout << "Введите второе число: ";
+    std::cin >> num2;
+
+    switch(operation) {
+        case '+':
+            result = add(num1, num2);
+            std::cout << "Результат сложения: " << result << std::endl;
+            break;
+        case '-':
+            result = subtract(num1, num2);
+            cout << "Результат вычитания: " << result << std::endl;
+            break;
+        default:
+            std::cout << "Ошибка: Неподдерживаемая операция!" << std::endl;
+    }
+
+    return 0;
+}
